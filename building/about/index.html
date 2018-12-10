@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Jim Katz">
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>About - Buddhist Digital Resource Center Asset Manager</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/tooltip.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Asset Manager Project Requirements", url: "#_top", children: [
+              {title: "References", url: "#references" },
+              {title: "Functionality", url: "#functionality" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="building/design/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="building/design/" class="btn btn-xs btn-link">
+        Design
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="" class="btn btn-xs btn-link">
+        Introduction
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="asset-manager-project-requirements">Asset Manager Project Requirements</h1>
+<h2 id="references">References</h2>
+<ol>
+<li>Ngawang Trinley <a href="https://buda-base.github.io/digitization-guidelines/">Buddhist Digital Resource Center Digitization Guidelines</a></li>
+<li>Design Documents:</li>
+</ol>
+<h2 id="functionality">Functionality</h2>
+<p>The Asset manager contains two subsystems:</p>
+<ol>
+<li>
+<p>The <strong>Audit Tool</strong>, which BDRC will deploy to the field, for DPEs. The audit tool is a standalone application which can run on Windows 7 - 10, or Mac OS 10.12 (?) or newer. The Audit tool allows BDRC to accept or reject scanning work while the scanning staff is still present. It also allows assembling a package which the field can upload for further processing.</p>
+</li>
+<li>
+<p>The <strong>Asset Manager</strong> is a web application which allows BDRC to process the uploaded packages, creating content streams which:</p>
+<ul>
+<li>BDRC archives for preservation,</li>
+<li>the BDRC web application can view</li>
+<li>updates BDRC metadata.</li>
+</ul>
+</li>
+</ol>
+<h3 id="audit-tool">Audit Tool</h3>
+<p>The Audit Tool use case is shown here:</p>
+<p><img alt="Audit Tool Use Case" src="../images/2018/12/Asset Manager Use cases-Audit Tool use case.png" />
+The audit tool supports multiple users who can submit, review, and approve or reject submissions.
+It also supports transferring to asset manager a package which contains both the content and the required metadata.
+It has limited reporting capability, as it is meant to be decentralized, and work only on standalone computers, operating on a local disk.</p>
+<p>In the diagram above, "Run Tests" means to run a specified set of tests to evaluate the submission's integrity. These tests include</p>
+<h3 id="asset-manager">Asset Manager</h3>
+<p>The Asset Manager use case is shown below:
+<img alt="Asset manager Use Case" src="../images/2018/12/Asset Manager Use cases-Asset Manager use case.png" />
+The Asset Manager provides a richer set of operations.</p>
+<h4 id="review">Review</h4>
+<p>Users access a dashboard which shows the processing status of collections which are awaiting processing.</p>
+<h4 id="test-submission">Test submission</h4>
+<p>Perform the same tests as the <a href="#Audit Tool">Audit Tool</a> does.</p>
+<h4 id="process-control">Process Control</h4>
+<p>Users control the image processing: launch and monitor processing workflows.</p>
+<h4 id="image-processing">Image processing</h4>
+<p>Use external resources (either open source libraries, or possibly third party network APIs) to process images. Processing steps include:</p>
+<ul>
+<li>Determining values for the following parameters, and saving those into a recipe:</li>
+<li>optimal cropping box for the contents.</li>
+<li>a deskewing transform, to remove any effects of image or camera tilt.</li>
+<li>some limited color correction</li>
+</ul>
+<h4 id="derived-image-creation">Derived image creation</h4>
+<p>Create derivative file formats form the archival masters.</p>
+<h4 id="ocr">OCR</h4>
+<p>Transmit images to a web service which will return text and other metadata. Further processing for this metadata is TBD.</p>
+<h4 id="web-deployment">Web deployment</h4>
+<p>Deploy some of the derivative works and selected metadata to the BDRC display platforms.</p>
+
+  <br>
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="building/design/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="building/design/" class="btn btn-xs btn-link">
+        Design
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="" class="btn btn-xs btn-link">
+        Introduction
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

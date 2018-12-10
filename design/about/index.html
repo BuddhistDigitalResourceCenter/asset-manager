@@ -7,22 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Project documentation and User Manual for Asset Manager"> 
     <meta name="author" content="Jim Katz"> 
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
 
     
-    <title>Home - Buddhist Digital Resource Center Asset Manager</title>
+    <title>About - Buddhist Digital Resource Center Asset Manager</title>
     
 
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/3.003/css/hack.min.css">
     <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="./css/base.min.css" rel="stylesheet">
-    <link href="./css/cinder.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/highlight.min.css">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/tooltip.css" rel="stylesheet">
+    <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="../../css/base.min.css" rel="stylesheet">
+    <link href="../../css/cinder.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.min.css">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/tooltip.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -44,7 +44,7 @@
      
 </head>
 
-<body class="homepage" >
+<body>
 
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -62,7 +62,7 @@
 
             <!-- Main title -->
 
-            <a class="navbar-brand" href=".">Buddhist Digital Resource Center Asset Manager</a>
+            <a class="navbar-brand" href="../..">Buddhist Digital Resource Center Asset Manager</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -71,25 +71,25 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">Home</a>
+                    <li >
+                        <a href="../..">Home</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Building <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="design/about/">About</a>
+<li class="active">
+    <a href="./">About</a>
 </li>
 
                         
                             
 <li >
-    <a href="design/design/">Design</a>
+    <a href="../design/">Design</a>
 </li>
 
                         
@@ -104,7 +104,7 @@
                         
                             
 <li >
-    <a href="resources/">resources</a>
+    <a href="../../resources/">resources</a>
 </li>
 
                         
@@ -120,13 +120,13 @@
                             <i class="fas fa-search"></i> Search
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../..">
                             <i class="fas fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="design/about/">
+                        <a rel="prev" href="../design/">
                             Next <i class="fas fa-arrow-right"></i>
                         </a>
                     </li>
@@ -140,20 +140,69 @@
         
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="first-level active"><a href="#asset-manager-documentation">Asset Manager Documentation</a></li>
-            <li class="second-level"><a href="#about-this-site">About this site</a></li>
+        <li class="first-level active"><a href="#asset-manager-project-requirements">Asset Manager Project Requirements</a></li>
+            <li class="second-level"><a href="#references">References</a></li>
                 
+            <li class="second-level"><a href="#functionality">Functionality</a></li>
+                
+                <li class="third-level"><a href="#audit-tool">Audit Tool</a></li>
+                <li class="third-level"><a href="#asset-manager">Asset Manager</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="asset-manager-documentation">Asset Manager Documentation</h1>
-<h2 id="about-this-site">About this site</h2>
-<p>This website contains:</p>
+<h1 id="asset-manager-project-requirements">Asset Manager Project Requirements</h1>
+<h2 id="references">References</h2>
+<ol>
+<li>Ngawang Trinley <a href="https://buda-base.github.io/digitization-guidelines/">Buddhist Digital Resource Center Digitization Guidelines</a></li>
+<li>Design Documents:</li>
+</ol>
+<h2 id="functionality">Functionality</h2>
+<p>The Asset manager contains two subsystems:</p>
+<ol>
+<li>
+<p>The <strong>Audit Tool</strong>, which BDRC will deploy to the field, for DPEs. The audit tool is a standalone application which can run on Windows 7 - 10, or Mac OS 10.12 (?) or newer. The Audit tool allows BDRC to accept or reject scanning work while the scanning staff is still present. It also allows assembling a package which the field can upload for further processing.</p>
+</li>
+<li>
+<p>The <strong>Asset Manager</strong> is a web application which allows BDRC to process the uploaded packages, creating content streams which:</p>
 <ul>
-<li>requirements and design documents</li>
-<li>user guide</li>
-</ul></div>
+<li>BDRC archives for preservation,</li>
+<li>the BDRC web application can view</li>
+<li>updates BDRC metadata.</li>
+</ul>
+</li>
+</ol>
+<h3 id="audit-tool">Audit Tool</h3>
+<p>The Audit Tool use case is shown here:</p>
+<p><img alt="Audit Tool Use Case" src="../images/2018/12/Asset Manager Use cases-Audit Tool use case.png" />
+The audit tool supports multiple users who can submit, review, and approve or reject submissions.
+It also supports transferring to asset manager a package which contains both the content and the required metadata.
+It has limited reporting capability, as it is meant to be decentralized, and work only on standalone computers, operating on a local disk.</p>
+<p>In the diagram above, "Run Tests" means to run a specified set of tests to evaluate the submission's integrity. These tests include</p>
+<h3 id="asset-manager">Asset Manager</h3>
+<p>The Asset Manager use case is shown below:
+<img alt="Asset manager Use Case" src="../images/2018/12/Asset Manager Use cases-Asset Manager use case.png" />
+The Asset Manager provides a richer set of operations.</p>
+<h4 id="review">Review</h4>
+<p>Users access a dashboard which shows the processing status of collections which are awaiting processing.</p>
+<h4 id="test-submission">Test submission</h4>
+<p>Perform the same tests as the <a href="#Audit Tool">Audit Tool</a> does.</p>
+<h4 id="process-control">Process Control</h4>
+<p>Users control the image processing: launch and monitor processing workflows.</p>
+<h4 id="image-processing">Image processing</h4>
+<p>Use external resources (either open source libraries, or possibly third party network APIs) to process images. Processing steps include:</p>
+<ul>
+<li>Determining values for the following parameters, and saving those into a recipe:</li>
+<li>optimal cropping box for the contents.</li>
+<li>a deskewing transform, to remove any effects of image or camera tilt.</li>
+<li>some limited color correction</li>
+</ul>
+<h4 id="derived-image-creation">Derived image creation</h4>
+<p>Create derivative file formats form the archival masters.</p>
+<h4 id="ocr">OCR</h4>
+<p>Transmit images to a web service which will return text and other metadata. Further processing for this metadata is TBD.</p>
+<h4 id="web-deployment">Web deployment</h4>
+<p>Deploy some of the derivative works and selected metadata to the BDRC display platforms.</p></div>
         
         
     </div>
@@ -167,16 +216,16 @@
         
     </footer>
 
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./js/bootstrap-3.0.3.min.js"></script>
-    <script src="./js/highlight.pack.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script>
-    var base_url = '.';
+    var base_url = '../..';
     </script>
-    <!-- <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script> -->
-    <script src="./js/base.js"></script>
-    <script src="search/main.js"></script>
+    <!-- <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script> -->
+    <script src="../../js/base.js"></script>
+    <script src="../../search/main.js"></script>
 
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
         <div class="modal-dialog">
@@ -208,8 +257,3 @@
     </body>
 
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2018-12-10 18:43:02
--->

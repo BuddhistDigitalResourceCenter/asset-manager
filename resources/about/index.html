@@ -8,7 +8,7 @@
   
   <meta name="author" content="Jim Katz">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Design - Buddhist Digital Resource Center Asset Manager</title>
+  <title>About - Buddhist Digital Resource Center Asset Manager</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Design";
-    var mkdocs_page_input_path = "design/design.md";
+    var mkdocs_page_name = "About";
+    var mkdocs_page_input_path = "resources/about.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -66,23 +66,11 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../about/">About</a>
+    <a class="" href="../../design/about/">About</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Design</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#asset-manager-design">Asset Manager Design</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#goals">Goals</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../design/design/">Design</a>
                 </li>
     </ul>
 	    </li>
@@ -91,13 +79,19 @@
 		
     <span class="caption-text">Resources</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../resources/about/">About</a>
+    <a class="current" href="./">About</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#building-this-document">Building this document</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../resources/resources/">References</a>
+    <a class="" href="../resources/">References</a>
                 </li>
     </ul>
 	    </li>
@@ -124,11 +118,11 @@
     
       
         
-          <li>Building &raquo;</li>
+          <li>Resources &raquo;</li>
         
       
     
-    <li>Design</li>
+    <li>About</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -138,17 +132,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="asset-manager-design">Asset Manager Design</h1>
-<h2 id="goals">Goals</h2>
-<h3 id="shareable-objects">Shareable Objects</h3>
-<p>Use the same code for data entities and other processing which are common to both level processes:
-+ Submission packages
-+ Metadata
-+ Test initiators
-+ Test Results
-+ Logs</p>
-<h3 id="validation-dynamic-discovery">Validation Dynamic Discovery</h3>
-<p>Some operations involve a set of tests against an object. Tests will be discoverable, and will be written in terms of an interface: a template which developers can use to extend the set of tests. The goal is to allow a developer to create or modify tests without a full release of the framework. These tests are best grouped by the object of the test, such as a delivery packet, a folder, or a work folder structure (e.g. files and folders)</p>
+                <h1 id="building-this-document">Building this document</h1>
+<p>This website was built under the following environment:
+- Python 3.7.1
+- mkdocs 1.0.4
+- mkdocs-cinder 0.1.4
+- - Asset Manager Git hub project pages <code>update from gh-pages</code> option is selected, because we use an outside theme, not a GH Jekyll theme.</p>
+<p>The <code>mkdocs-windmill</code> theme was considered, but it doesn't work with <code>mkdocs 1.0</code>
+<a href="https://github.com/gristlabs/mkdocs-windmill/issues/30">mkdocs-windmill Issue #30</a></p>
+<p>The documents are largely edited in <a href="https://atom.io">Atom</a>, because of its awesome image capturing capability, and its generally better Makrdown preview than pyCharm (where most of the Python development is being done.)</p>
               
             </div>
           </div>
@@ -156,10 +148,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../resources/about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../resources/" class="btn btn-neutral float-right" title="References">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../about/" class="btn btn-neutral" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../design/design/" class="btn btn-neutral" title="Design"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -185,10 +177,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../design/design/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../resources/about/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../resources/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

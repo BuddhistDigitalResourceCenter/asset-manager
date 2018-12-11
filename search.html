@@ -16,8 +16,8 @@
     <link href="./css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="./css/base.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/highlight.css">
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/tooltip.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/tooltip.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -49,10 +49,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <a name="_top"></a>
     
 
+  <h1 id="search">Search Results</h1>
 
-  <h2 style="text-align: center">404</h2>
-  <h1 style="text-align: center">Page not found</h1>
+  <ul id="mkdocs-search-results" class="wm-search-page">
+    Searching...
+  </ul>
 
+  <script>
+    window.top.doSearch({
+      resultsElem: $('#mkdocs-search-results'),
+      query: getParam('q'),
+      snippetLen: 200,
+      limit: 0
+    });
+  </script>
 
 
   <br>

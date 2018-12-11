@@ -1,0 +1,154 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Asset Manager Documentation\n\n\nAbout this site\n\n\nThis website contains:\n\n\n\n\nrequirements and design documents\n\n\nuser guide",
+            "title": "Home"
+        },
+        {
+            "location": "/#asset-manager-documentation",
+            "text": "",
+            "title": "Asset Manager Documentation"
+        },
+        {
+            "location": "/#about-this-site",
+            "text": "This website contains:   requirements and design documents  user guide",
+            "title": "About this site"
+        },
+        {
+            "location": "/design/about/",
+            "text": "Asset Manager Project Requirements\n\n\nReferences\n\n\n\n\nNgawang Trinley \nBuddhist Digital Resource Center Digitization Guidelines\n\n\nDesign Documents:\n\n\n\n\nFunctionality\n\n\nThe Asset manager contains two subsystems:\n\n\n\n\n\n\nThe \nAudit Tool\n, which BDRC will deploy to the field, for DPEs. The audit tool is a standalone application which can run on Windows 7 - 10, or Mac OS 10.12 (?) or newer. The Audit tool allows BDRC to accept or reject scanning work while the scanning staff is still present. It also allows assembling a package which the field can upload for further processing.\n\n\n\n\n\n\nThe \nAsset Manager\n is a web application which allows BDRC to process the uploaded packages, creating content streams which:\n\n\n\n\nBDRC archives for preservation,\n\n\nthe BDRC web application can view\n\n\nupdates BDRC metadata.\n\n\n\n\n\n\n\n\nAudit Tool\n\n\nThe Audit Tool use case is shown here:\n\n\n\nThe audit tool supports multiple users who can submit, review, and approve or reject submissions.\nIt also supports transferring to asset manager a package which contains both the content and the required metadata.\nIt has limited reporting capability, as it is meant to be decentralized, and work only on standalone computers, operating on a local disk.\n\n\nIn the diagram above, \"Run Tests\" means to run a specified set of tests to evaluate the submission's integrity. These tests include\n\n\nAsset Manager\n\n\nThe Asset Manager use case is shown below:\n\n\nThe Asset Manager provides a richer set of operations.\n\n\nReview\n\n\nUsers access a dashboard which shows the processing status of collections which are awaiting processing.\n\n\nTest submission\n\n\nPerform the same tests as the \nAudit Tool\n does.\n\n\nProcess Control\n\n\nUsers control the image processing: launch and monitor processing workflows.\n\n\nImage processing\n\n\nUse external resources (either open source libraries, or possibly third party network APIs) to process images. Processing steps include:\n\n\n\n\nDetermining values for the following parameters, and saving those into a recipe:\n\n\noptimal cropping box for the contents.\n\n\na deskewing transform, to remove any effects of image or camera tilt.\n\n\nsome limited color correction\n\n\n\n\nDerived image creation\n\n\nCreate derivative file formats form the archival masters.\n\n\nOCR\n\n\nTransmit images to a web service which will return text and other metadata. Further processing for this metadata is TBD.\n\n\nWeb deployment\n\n\nDeploy some of the derivative works and selected metadata to the BDRC display platforms.",
+            "title": "About"
+        },
+        {
+            "location": "/design/about/#asset-manager-project-requirements",
+            "text": "",
+            "title": "Asset Manager Project Requirements"
+        },
+        {
+            "location": "/design/about/#references",
+            "text": "Ngawang Trinley  Buddhist Digital Resource Center Digitization Guidelines  Design Documents:",
+            "title": "References"
+        },
+        {
+            "location": "/design/about/#functionality",
+            "text": "The Asset manager contains two subsystems:    The  Audit Tool , which BDRC will deploy to the field, for DPEs. The audit tool is a standalone application which can run on Windows 7 - 10, or Mac OS 10.12 (?) or newer. The Audit tool allows BDRC to accept or reject scanning work while the scanning staff is still present. It also allows assembling a package which the field can upload for further processing.    The  Asset Manager  is a web application which allows BDRC to process the uploaded packages, creating content streams which:   BDRC archives for preservation,  the BDRC web application can view  updates BDRC metadata.",
+            "title": "Functionality"
+        },
+        {
+            "location": "/design/about/#audit-tool",
+            "text": "The Audit Tool use case is shown here:  \nThe audit tool supports multiple users who can submit, review, and approve or reject submissions.\nIt also supports transferring to asset manager a package which contains both the content and the required metadata.\nIt has limited reporting capability, as it is meant to be decentralized, and work only on standalone computers, operating on a local disk.  In the diagram above, \"Run Tests\" means to run a specified set of tests to evaluate the submission's integrity. These tests include",
+            "title": "Audit Tool"
+        },
+        {
+            "location": "/design/about/#asset-manager",
+            "text": "The Asset Manager use case is shown below: \nThe Asset Manager provides a richer set of operations.",
+            "title": "Asset Manager"
+        },
+        {
+            "location": "/design/about/#review",
+            "text": "Users access a dashboard which shows the processing status of collections which are awaiting processing.",
+            "title": "Review"
+        },
+        {
+            "location": "/design/about/#test-submission",
+            "text": "Perform the same tests as the  Audit Tool  does.",
+            "title": "Test submission"
+        },
+        {
+            "location": "/design/about/#process-control",
+            "text": "Users control the image processing: launch and monitor processing workflows.",
+            "title": "Process Control"
+        },
+        {
+            "location": "/design/about/#image-processing",
+            "text": "Use external resources (either open source libraries, or possibly third party network APIs) to process images. Processing steps include:   Determining values for the following parameters, and saving those into a recipe:  optimal cropping box for the contents.  a deskewing transform, to remove any effects of image or camera tilt.  some limited color correction",
+            "title": "Image processing"
+        },
+        {
+            "location": "/design/about/#derived-image-creation",
+            "text": "Create derivative file formats form the archival masters.",
+            "title": "Derived image creation"
+        },
+        {
+            "location": "/design/about/#ocr",
+            "text": "Transmit images to a web service which will return text and other metadata. Further processing for this metadata is TBD.",
+            "title": "OCR"
+        },
+        {
+            "location": "/design/about/#web-deployment",
+            "text": "Deploy some of the derivative works and selected metadata to the BDRC display platforms.",
+            "title": "Web deployment"
+        },
+        {
+            "location": "/design/design/",
+            "text": "Asset Manager Design\n\n\nGoals\n\n\nShareable Objects\n\n\nUse the same code for data entities and other processing which are common to both level processes:\n+ Submission packages\n+ Metadata\n+ Test initiators\n+ Test Results\n+ Logs\n\n\nValidation Dynamic Discovery\n\n\nSome operations involve a set of tests against an object. Tests will be discoverable, and will be written in terms of an interface: a template which developers can use to extend the set of tests. The goal is to allow a developer to create or modify tests without a full release of the framework. These tests are best grouped by the object of the test, such as a delivery packet, a folder, or a work folder structure (e.g. files and folders)",
+            "title": "Design"
+        },
+        {
+            "location": "/design/design/#asset-manager-design",
+            "text": "",
+            "title": "Asset Manager Design"
+        },
+        {
+            "location": "/design/design/#goals",
+            "text": "",
+            "title": "Goals"
+        },
+        {
+            "location": "/design/design/#shareable-objects",
+            "text": "Use the same code for data entities and other processing which are common to both level processes:\n+ Submission packages\n+ Metadata\n+ Test initiators\n+ Test Results\n+ Logs",
+            "title": "Shareable Objects"
+        },
+        {
+            "location": "/design/design/#validation-dynamic-discovery",
+            "text": "Some operations involve a set of tests against an object. Tests will be discoverable, and will be written in terms of an interface: a template which developers can use to extend the set of tests. The goal is to allow a developer to create or modify tests without a full release of the framework. These tests are best grouped by the object of the test, such as a delivery packet, a folder, or a work folder structure (e.g. files and folders)",
+            "title": "Validation Dynamic Discovery"
+        },
+        {
+            "location": "/resources/",
+            "text": "Resources\n\n\nSource\n\n\nhtps://github.com/buda-base/asset-manager\n\n\n\n\nTrello Project Management\n\n\nThese resources are available only to the BDRC Team and selected observers.\nif you require access, please request to \njimk AT tbrc DOT org\n\n\nAudit Tool\n\n\nAsset Manager\n\n\nOther Images\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOther Documents\n\n\nNotes from 2018-9-07\n\n\nCore Requirements docs\n\n\nThese documents are maintained in a shared Google Drive Folder, \nAsset Manager\n\n\nAsset Manager v.01 Core Requirements\n\n\nAsset Manager v-1.0\n\n\nAsset Manager Notes\n Clearest statement of workflow.",
+            "title": "Resources"
+        },
+        {
+            "location": "/resources/#resources",
+            "text": "",
+            "title": "Resources"
+        },
+        {
+            "location": "/resources/#source",
+            "text": "htps://github.com/buda-base/asset-manager",
+            "title": "Source"
+        },
+        {
+            "location": "/resources/#trello-project-management",
+            "text": "These resources are available only to the BDRC Team and selected observers.\nif you require access, please request to  jimk AT tbrc DOT org",
+            "title": "Trello Project Management"
+        },
+        {
+            "location": "/resources/#audit-tool",
+            "text": "",
+            "title": "Audit Tool"
+        },
+        {
+            "location": "/resources/#asset-manager",
+            "text": "",
+            "title": "Asset Manager"
+        },
+        {
+            "location": "/resources/#other-images",
+            "text": "",
+            "title": "Other Images"
+        },
+        {
+            "location": "/resources/#other-documents",
+            "text": "Notes from 2018-9-07",
+            "title": "Other Documents"
+        },
+        {
+            "location": "/resources/#core-requirements-docs",
+            "text": "These documents are maintained in a shared Google Drive Folder,  Asset Manager  Asset Manager v.01 Core Requirements  Asset Manager v-1.0  Asset Manager Notes  Clearest statement of workflow.",
+            "title": "Core Requirements docs"
+        }
+    ]
+}

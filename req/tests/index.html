@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Jim Katz">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Test Requirements - Buddhist Digital Resource Center Asset Manager</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/style.css" rel="stylesheet">
+  <link href="../../css/tooltip.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Test Requirements";
+    var mkdocs_page_input_path = "req/tests.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Buddhist Digital Resource Center Asset Manager</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Requirements</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../requirements/">Asset Manager Requirements</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Test Requirements</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#test-requirements">Test Requirements</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#audit-number-of-files-per-folder">Audit number of files per folder</a></li>
+        
+            <li><a class="toctree-l4" href="#file-type">File Type</a></li>
+        
+            <li><a class="toctree-l4" href="#canonical-paths">Canonical paths</a></li>
+        
+            <li><a class="toctree-l4" href="#audit-biblio-sheets">Audit Biblio-sheets</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Building</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../design/design/">Design</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../resources/about/">About</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../resources/resources/">References</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Buddhist Digital Resource Center Asset Manager</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Requirements &raquo;</li>
+        
+      
+    
+    <li>Test Requirements</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="test-requirements">Test Requirements</h1>
+<p>this document defines each test in <a href="../requirements/#Shared Requirements">Requirements</a>
+See <a href="https://buda-base.github.io/digitization-guidelines/#standards/standards-en/">Digitization standards Folder Structure</a>
+and <a href="https://github.com/ngawangtrinley/bdrc-audit/blob/master/README.md">bdrc-audit prototype to do list</a></p>
+<p>The test subject is a set of files in a path. The audit user inputs test parameters. Each test may have its own set of parameters.</p>
+<p>For most tests, the required input is the container of a <strong>project</strong>. This structure is named the <a name="Standard_Structure">Standard Project Structure</a> The container is a folder which contains:
+- a Bibliographic Info Sheet in Excel format
+- a directory named "archive" which contains subfolders (no naming convention)
+- a directory named "images"  which contains subfolders (no naming convention)</p>
+<h2 id="audit-number-of-files-per-folder">Audit number of files per folder</h2>
+<h3 id="test-parameters">Test Parameters</h3>
+<p>Path to a folder containing a <a href="#Standard_Structure">Standard Project Structure</a></p>
+<h3 id="success-criteria">Success criteria:</h3>
+<p>Passes only when:
+<em> every subfolder contains only files whose file name ends with a number.
+</em> The numbers in the file name endings form a series 1..n where n is the number of files in the folder.
+* Numbers may contain leading zeroes. It is not required that each file contain the same format. For example,</p>
+<pre><code>W42_I4242_0001.jpg
+W42_I4242_2.jpg
+</code></pre>
+
+<p>is a valid sequence for a two file folder.</p>
+<h2 id="file-type">File Type</h2>
+<h3 id="test-parameters_1">Test parameters</h3>
+<ul>
+<li>Path to a folder containing a <a href="#Standard_Structure">Standard Project Structure</a></li>
+<li>a designation of the folder containing the archival master (default name: <code>archive</code> )</li>
+<li>a designation of the folder containing the web images (default name: <code>images</code> )</li>
+</ul>
+<h3 id="success-criteria_1">Success criteria:</h3>
+<p>Passes only when:
+* the archive files contain only images which match these requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File format</td>
+<td>JPEG 2000 (.j2k), wavelets compression, highest data size</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>600 ppi/dpi</td>
+</tr>
+<tr>
+<td>Color profile</td>
+<td>RGB, 24-bits</td>
+</tr>
+<tr>
+<td>Pixel dimensions</td>
+<td>consistent width</td>
+</tr>
+<tr>
+<td>~~Quality~~</td>
+<td>~~1 page per image, no borders, no scan lines, no artifacts~~</td>
+</tr>
+</tbody>
+</table>
+<p>The Quality aspect cannot be determined by programmatic inspection, so it is not a requirement in the audit phase.</p>
+<ul>
+<li>the web images folder files have the following properties:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File Format</td>
+<td>JPEG (.jpg) for color pages, TIFF G4 compression (.tif) for text only pages</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>consistent ppi/dpi</td>
+</tr>
+<tr>
+<td>Color Profile</td>
+<td>RGB 24-bits for JPEG, BW 1-bit for TIFF</td>
+</tr>
+<tr>
+<td>Pixel dimensions</td>
+<td>consistent width</td>
+</tr>
+<tr>
+<td>File size</td>
+<td>smaller than 400 KB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="canonical-paths">Canonical paths</h2>
+<h3 id="test-parameters_2">Test Parameters</h3>
+<ul>
+<li>Path to a folder containing a <a href="#Standard_Structure">Standard Project Structure</a></li>
+<li>Work Name: an unformatted text string</li>
+<li>Volume names: a list of unformatted text strings, representing the volumes in the work.</li>
+</ul>
+<p>Note this document does not specify formats for work and volume names.</p>
+<h3 id="success-criteria_2">Success Criteria</h3>
+<p>This test passes when:</p>
+<ol>
+<li>the last element of the project folder is the work name.</li>
+<li>The project folder contains one folder for each given volume.</li>
+</ol>
+<h2 id="audit-biblio-sheets">Audit Biblio-sheets</h2>
+<p><strong>Needs more detail</strong></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../design/design/" class="btn btn-neutral float-right" title="Design">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../requirements/" class="btn btn-neutral" title="Asset Manager Requirements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../requirements/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../design/design/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

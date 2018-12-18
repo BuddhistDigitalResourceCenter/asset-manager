@@ -8,7 +8,7 @@
   
   <meta name="author" content="Jim Katz">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Requirements - Buddhist Digital Resource Center Asset Manager</title>
+  <title>Asset Manager Requirements - Buddhist Digital Resource Center Asset Manager</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Requirements";
+    var mkdocs_page_name = "Asset Manager Requirements";
     var mkdocs_page_input_path = "req/requirements.md";
     var mkdocs_page_url = null;
   </script>
@@ -55,37 +55,55 @@
     <a class="" href="../..">Home</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Requirements</a>
+    <span class="caption-text">Requirements</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Asset Manager Requirements</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#asset-manager-requirements">Asset Manager Requirements</a></li>
+    <li class="toctree-l3"><a href="#asset-manager-requirements">Asset Manager Requirements</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#overview">Overview</a></li>
+            <li><a class="toctree-l4" href="#overview">Overview</a></li>
         
-            <li><a class="toctree-l3" href="#references">References</a></li>
+            <li><a class="toctree-l4" href="#referenced-documents">Referenced documents</a></li>
         
-            <li><a class="toctree-l3" href="#audit-tool">Audit Tool</a></li>
+            <li><a class="toctree-l4" href="#definitions">Definitions</a></li>
         
-            <li><a class="toctree-l3" href="#asset-manager">Asset Manager</a></li>
+            <li><a class="toctree-l4" href="#scope-of-asset-manager">Scope of Asset Manager</a></li>
         
-            <li><a class="toctree-l3" href="#shared-requirements">Shared Requirements</a></li>
+            <li><a class="toctree-l4" href="#asset-manager-user-profiles">Asset Manager user profiles</a></li>
+        
+            <li><a class="toctree-l4" href="#functional-requirements">Functional Requirements</a></li>
+        
+            <li><a class="toctree-l4" href="#audit-tool">Audit Tool</a></li>
+        
+            <li><a class="toctree-l4" href="#asset-manager">Asset Manager</a></li>
+        
+            <li><a class="toctree-l4" href="#shared-requirements">Shared Requirements</a></li>
         
         </ul>
     
 
-    <li class="toctree-l2"><a href="#detailed-requirements">Detailed Requirements</a></li>
+    <li class="toctree-l3"><a href="#detailed-requirements">Detailed Requirements</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#audit-tool_1">Audit Tool</a></li>
+            <li><a class="toctree-l4" href="#audit-tool_1">Audit Tool</a></li>
         
         </ul>
     
 
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tests/">Test Requirements</a>
+                </li>
     </ul>
 	    </li>
           
@@ -136,8 +154,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Requirements &raquo;</li>
+        
+      
     
-    <li>Requirements</li>
+    <li>Asset Manager Requirements</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -154,14 +176,52 @@
 <li>Reduce the backlog of images which we have scanned and catalogued, but are not yet available to the web users.</li>
 <li>Enhance the integrity of new scans by allowing iterations of scanning, review, changes, and re-scanning in the field.</li>
 </ol>
-<p>This document groups these requirements into three buckets:</p>
+<h2 id="referenced-documents">Referenced documents</h2>
+<ul>
+<li>[1] <a href="https://buda-base.github.io/digitization-guidelines/#standards/standards-en/">Digitization standards Folder Structure</a></li>
+<li>[2] <a href="https://github.com/ngawangtrinley/bdrc-audit/blob/master/README.md">bdrc-audit prototype to do list</a></li>
+</ul>
+<h2 id="definitions">Definitions</h2>
+<p><strong>Work</strong> A Work is the denomination of submitted content. The work's name is it's "key" field, and is its well-known name.
+<strong>Submittal</strong> A submittal, or submission, is the content od the "work," along with metadata which directs its entry into the Asset Manager (for example, the work name)</p>
+<p>As in any good software practice, the public name of a work or submittal is editable, while it's internal identifier remains unchanged.</p>
+<h2 id="scope-of-asset-manager">Scope of Asset Manager</h2>
+<h3 id="acquisition-channels">Acquisition channels</h3>
+<p>The Asset Manager will process new scanned packages, but will also maintain an inventory of our backlog of unpublished assets. It will support the three channels of acquisition:</p>
+<ol>
+<li>The previously submitted backlog of catalogued holdings, which need some processing before they are sutiable for deployment.</li>
+<li>The output of ongoing BDRC managed projects, such as USAID, EAP, FPL, and ACIP Mongolia</li>
+<li>Unsolicited input in a variety of formats.</li>
+</ol>
+<h3 id="partial-progress">Partial Progress</h3>
+<p>A complete content package contains three copies of the content, in containers named:</p>
+<ul>
+<li>sources</li>
+<li>archive</li>
+<li>web</li>
+</ul>
+<p><strong>Sources</strong> is the unprocessed output of the scanning device or camera, or of software.</p>
+<p><strong>Archive</strong> is  ???</p>
+<p><strong>Web</strong> is the processed images which are suitable for download.</p>
+<p>BDRC contributors do not always present all the copies of the content at the same time. Often, the web deliverable is the first to arrive.
+Asset Manager presents a packaging interface which supports partial submittals and tracking of submittal progress.</p>
+<h2 id="asset-manager-user-profiles">Asset Manager user profiles</h2>
+<p>The Asset Manager suite supports different profiles of users. There is no current requirement to restrict functionality by user. If a user has access to the application, they can perform any function on it. The Asset Manager never deletes a resource, it only changes the state information of the resource's metadata. All those changes are reversible.
+User communities are:</p>
+<ul>
+<li>BDRC library users: These are our end consumers of <a href="http://tbrc.org">tbrc.org</a>.Their capacity to use the TBRC website is determined by their computers' image processing and network power. One end of capability, is  graphics workstations  attached to the Internet backbone. At the other end, they are Nepali or Tibetan monks referring to an image on a cell phone served by a 2 or 3G cellular service.</li>
+<li>Field scanning staff: This group contains all the BDRC employees and contractors who perform the first level of scanning, review, and intake of digital media. Reference <a href="https://buda-base.github.io/digitization-guidelines/#workflow/workflow-en/#digitization-workflow">1</a> contains details of these user profiles.</li>
+<li>Curation staff: These are the BDRC archivists and librarians who manage the processing and deployment of BDRC holdings.</li>
+</ul>
+<h2 id="functional-requirements">Functional Requirements</h2>
+<p>This document groups the Asset Manager requirements into three buckets:</p>
 <ol>
 <li><strong>Audit Tool</strong>: The requirements for a component which allows BDRC field managers to review a submission and approve or reject it.</li>
 <li>
 <p><strong>Asset Manager</strong>: A platform which allows a user to:</p>
 <ul>
 <li>Review status of scans: not started, underway, complete</li>
-<li>Validate that packages meet standards</li>
+<li>Validate that packages meet standards. The <strong>Audit Tool</strong> functionality will be in the Asset Manager: Audit Tool is a repackaging designed for installation in remote systems.</li>
 <li>Invoke image processing tools to prepare images for web deployment.</li>
 <li>Deploy works to the BDRC web.</li>
 </ul>
@@ -175,22 +235,18 @@
 </ul>
 </li>
 </ol>
-<h2 id="references">References</h2>
-<ol>
-<li>Ngawang Trinley <a href="https://buda-base.github.io/digitization-guidelines/">Buddhist Digital Resource Center Digitization Guidelines</a></li>
-<li>Design Documents:</li>
-</ol>
 <h2 id="audit-tool">Audit Tool</h2>
 <p>The Audit Tool use case is shown here:</p>
-<p><img alt="Audit Tool Use Case" src="../images/2018/12/Asset Manager Use cases-Audit Tool use case.png" />
-The audit tool supports multiple users who can submit, review, and approve or reject submissions.
+<p><img alt="Audit Tool Use Case" src="../images/2018/12/Asset Manager Use cases-Audit Tool use case.png" /></p>
+<p>The audit tool supports multiple users who can submit, review, and approve or reject submissions.
 It also supports transferring to asset manager a package which contains both the content and the required metadata.
 It has limited reporting capability, as it is meant to be decentralized, and work only on standalone computers, operating on a local disk.</p>
-<p>In the diagram above, "Run Tests" means to run a specified set of tests to evaluate the submission's integrity. These tests include</p>
+<p>In the diagram above, "Run Tests" means to run a specified set of tests to evaluate the submission's integrity.</p>
 <h2 id="asset-manager">Asset Manager</h2>
 <p>The Asset Manager use case is shown below:
-<img alt="Asset manager Use Case" src="../images/2018/12/Asset Manager Use cases-Asset Manager use case.png" />
-The Asset Manager provides a richer set of operations.</p>
+<img alt="Asset manager Use Case" src="../images/2018/12/Asset Manager Use cases-Asset Manager use case.png" /></p>
+<p>The Asset Manager includes the auditing tools and also provides management facilities for tracking submission progress, image processing and web deployment.</p>
+<p>All the specific areas below will present interfaces for changing a submittal's state</p>
 <h3 id="review">Review</h3>
 <p>Users access a dashboard which shows the processing status of collections which are awaiting processing.</p>
 <h3 id="test-submission">Test submission</h3>
@@ -211,12 +267,13 @@ The Asset Manager provides a richer set of operations.</p>
 <h3 id="ocr">OCR</h3>
 <p>Transmit images to a web service which will return text and other metadata. Further processing for this metadata is TBD.</p>
 <h3 id="web-deployment">Web deployment</h3>
-<p>Deploy some of the derivative works and selected metadata to the BDRC display platforms.</p>
+<p>Deploy some of the derivative works and selected metadata to the BDRC display platforms. Asset manager will allow updating of sections of works at any level of granularity from the work down to the individual image.</p>
 <h2 id="shared-requirements">Shared Requirements</h2>
 <p>These requirements are drawn from
 - <a href="https://docs.google.com/document/d/1oVjpQ8PWjXNLgDDaUI5H-O07iaf0RjR3Ff79AwnMluo">Asset Manager v.01 Core Requirements</a>
 - <a href="https://drive.google.com/open?id=1QvMgnUNnCYawPOplDbWkkzuWrpw0avWL3OWzf5Qxd24">Asset Manager v-1.0</a>
 - And the to-do section of <a href="https://github.com/ngawangtrinley/bdrc-audit/blob/master/README.md">BDRC Audit Prototype README</a></p>
+<p>See <a href="../tests/">Test Requirements</a> for detailed requirements.</p>
 <table>
 <thead>
 <tr>
@@ -228,7 +285,7 @@ The Asset Manager provides a richer set of operations.</p>
 </thead>
 <tbody>
 <tr>
-<td>Item/Volume Requirement</td>
+<td>Number of files per folder</td>
 <td>✅</td>
 <td>✅</td>
 <td></td>
@@ -246,21 +303,9 @@ The Asset Manager provides a richer set of operations.</p>
 <td></td>
 </tr>
 <tr>
-<td>File Sequences / Number of Files</td>
-<td>✅</td>
-<td>✅</td>
-<td></td>
-</tr>
-<tr>
-<td>Validate biblio-sheet</td>
+<td>Audit biblio-sheet</td>
 <td>✅</td>
 <td>❌</td>
-<td></td>
-</tr>
-<tr>
-<td>Internal image size/ppi</td>
-<td>✅</td>
-<td>✅</td>
 <td></td>
 </tr>
 <tr>
@@ -293,9 +338,18 @@ The command line invocation should either start a text-mode or a windowed dialog
 <li>The system runs each test in turn, and records the results.</li>
 <li>The system displays the results.</li>
 </ol>
+<p><a href="../tests/">Test Requirements</a>documents each test's parameters and success criteria.</p>
 <h5 id="enter-biblio-data">Enter biblio-data</h5>
-<p>The system prompts the user for the bibliographical data. It saves the data in a format which the package builder will include.
-<strong>Details are needed</strong>.</p>
+<p>The system prompts the user for the bibliographical data. It saves the data in a format which the package builder will include. The biblio-data might be what the scanning operator or their project manager input into the spreadsheet (see <a href="https://buda-base.github.io/digitization-guidelines/#standards/standards-en/">Bibliographic Data Sheet</a>)</p>
+<p><strong>Implementation note:</strong> The python <code>xlrd</code> package supports extracting data from an Excel sheet. If we truly require input sheets to be <code>.xlsx</code> format, we could consider expanding the biblio-sheet to include the data which auditing requires. That would validate the biblio sheet first. )</p>
+<p>The biblio sheet must include at a minimum:</p>
+<ul>
+<li>Work Name</li>
+<li>Volumes Names</li>
+<li>Scan Date</li>
+<li>Info on person who scanned the document (BDRC ref number, or email, or name, or some combination)</li>
+<li><strong>Any other information the Asset Manager requires</strong> This will be an ongoing requirement. The Audit tool validation mechanism may be changed with every release. If needed, it will provide the Excel template for the biblio-data.</li>
+</ul>
 <h5 id="build-upload-package">Build upload package</h5>
 <ol>
 <li>The system runs all the <strong>required</strong> tests.</li>
@@ -325,7 +379,7 @@ The upload package contains:</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../design/design/" class="btn btn-neutral float-right" title="Design">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../tests/" class="btn btn-neutral float-right" title="Test Requirements">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -357,7 +411,7 @@ The upload package contains:</li>
         <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../design/design/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../tests/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

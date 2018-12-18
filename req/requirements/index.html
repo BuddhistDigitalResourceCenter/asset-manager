@@ -84,6 +84,8 @@
         
             <li><a class="toctree-l4" href="#asset-manager">Asset Manager</a></li>
         
+            <li><a class="toctree-l4" href="#workflow">workflow</a></li>
+        
             <li><a class="toctree-l4" href="#shared-requirements">Shared Requirements</a></li>
         
         </ul>
@@ -189,7 +191,7 @@
 <h3 id="acquisition-channels">Acquisition channels</h3>
 <p>The Asset Manager will process new scanned packages, but will also maintain an inventory of our backlog of unpublished assets. It will support the three channels of acquisition:</p>
 <ol>
-<li>The previously submitted backlog of catalogued holdings, which need some processing before they are sutiable for deployment.</li>
+<li>The previously submitted backlog of catalogued holdings, which need processing before they are suitable for deployment.</li>
 <li>The output of ongoing BDRC managed projects, such as USAID, EAP, FPL, and ACIP Mongolia</li>
 <li>Unsolicited input in a variety of formats.</li>
 </ol>
@@ -246,7 +248,9 @@ It has limited reporting capability, as it is meant to be decentralized, and wor
 <p>The Asset Manager use case is shown below:
 <img alt="Asset manager Use Case" src="../images/2018/12/Asset Manager Use cases-Asset Manager use case.png" /></p>
 <p>The Asset Manager includes the auditing tools and also provides management facilities for tracking submission progress, image processing and web deployment.</p>
-<p>All the specific areas below will present interfaces for changing a submittal's state</p>
+<p>All the specific areas below will present interfaces for changing a submittal's state.</p>
+<h2 id="workflow">workflow</h2>
+<p><img alt="Asset Manager Sequence" src="../images/2018/12/Asset Manager Sequence.png" /></p>
 <h3 id="review">Review</h3>
 <p>Users access a dashboard which shows the processing status of collections which are awaiting processing.</p>
 <h3 id="test-submission">Test submission</h3>
@@ -274,48 +278,11 @@ It has limited reporting capability, as it is meant to be decentralized, and wor
 - <a href="https://drive.google.com/open?id=1QvMgnUNnCYawPOplDbWkkzuWrpw0avWL3OWzf5Qxd24">Asset Manager v-1.0</a>
 - And the to-do section of <a href="https://github.com/ngawangtrinley/bdrc-audit/blob/master/README.md">BDRC Audit Prototype README</a></p>
 <p>See <a href="../tests/">Test Requirements</a> for detailed requirements.</p>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Audit Tool</th>
-<th>Asset Manager</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Number of files per folder</td>
-<td>✅</td>
-<td>✅</td>
-<td></td>
-</tr>
-<tr>
-<td>File Type Requirement</td>
-<td>✅</td>
-<td>✅</td>
-<td></td>
-</tr>
-<tr>
-<td>Canonical paths</td>
-<td>✅</td>
-<td>✅</td>
-<td></td>
-</tr>
-<tr>
-<td>Audit biblio-sheet</td>
-<td>✅</td>
-<td>❌</td>
-<td></td>
-</tr>
-<tr>
-<td>Validate upload package</td>
-<td>✅</td>
-<td>✅</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>Number of files per folder
+File Type Requirement
+Canonical paths
+Audit biblio-sheet
+Validate upload package</p>
 <h1 id="detailed-requirements">Detailed Requirements</h1>
 <h2 id="audit-tool_1">Audit Tool</h2>
 <h3 id="host-platform">Host Platform</h3>
@@ -352,23 +319,25 @@ The command line invocation should either start a text-mode or a windowed dialog
 </ul>
 <h5 id="build-upload-package">Build upload package</h5>
 <ol>
-<li>The system runs all the <strong>required</strong> tests.</li>
-<li>The system builds the upload package only if this invocation of the tests passes.
-The upload package contains:</li>
+<li>The user invokes the build package through the user interface.</li>
 <li>
-<p>production information:</p>
-<ul>
-<li>Scanning organization</li>
-<li>BDRC Personnel sign-off:</li>
-<li>DPE</li>
-<li>FR</li>
-<li>DPM</li>
-</ul>
-<p>The sign-offs are only required for the Asset Manager to intake the submittal package. A DPE or FR can sign their portions, but the DPM has to add their signature to the package before the Asset Manager will accept it.
+<p>The system:</p>
+</li>
+<li>
+<p>runs all the <strong>required</strong> tests. If they pass, it</p>
+</li>
+<li>builds the upload package only if this invocation of the tests passes.</li>
+</ol>
+<p>The upload package contains:
+  - production information:
+    - Scanning organization
+    - BDRC Personnel sign-off:
+      - DPE
+      - FR
+      - DPM
   - submitter id: a valid email address for the submitter.
   - work information: (see biblio-data above)</p>
-</li>
-</ol>
+<p>The sign-offs are only required for the Asset Manager to intake the submittal package. A DPE or FR can sign their portions, but the DPM has to add their signature to the package before the Asset Manager will accept it.</p>
 <h5 id="package-uploader">Package Uploader</h5>
 <p>Upload the package. If the package passes the <code>Validate upload package</code> test, this facility transfers it to a resource where further processing can occur.[^Todiscuss]</p>
 <p>[^Todiscuss]: This should be a separate, controlled facility. We don't want DPEs or FRs to upload.</p>

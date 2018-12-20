@@ -186,9 +186,9 @@
 <li>[2] <a href="https://github.com/ngawangtrinley/bdrc-audit/blob/master/README.md">bdrc-audit prototype to do list</a></li>
 </ul>
 <h2 id="definitions">Definitions</h2>
-<p><strong>Work</strong> A Work is the denomination of submitted content. The work's name is it's "key" field, and is its well-known name.
-<strong>Submittal</strong> A submittal, or submission, is the content od the "work," along with metadata which directs its entry into the Asset Manager (for example, the work name)</p>
-<p>As in any good software practice, the public name of a work or submittal is editable, while it's internal identifier remains unchanged.</p>
+<p><strong>Work</strong> A Work is the denomination of submitted content. The work's name is its "key" field, and is its well-known name.
+<strong>Submittal</strong> A submittal, or submission, is the content of the "work," along with metadata which directs its entry into the Asset Manager (for example, the work name)</p>
+<p>As in any good software practice, the public name of a work or submittal is editable, while its internal identifier remains unchanged.</p>
 <h2 id="scope-of-asset-manager">Scope of Asset Manager</h2>
 <h3 id="acquisition-channels">Acquisition channels</h3>
 <p>The Asset Manager will process new scanned packages, but will also maintain an inventory of our backlog of unpublished assets. It will support the three channels of acquisition:</p>
@@ -283,17 +283,21 @@ It has limited reporting capability, as it is meant to be decentralized, and wor
 - <a href="https://drive.google.com/open?id=1QvMgnUNnCYawPOplDbWkkzuWrpw0avWL3OWzf5Qxd24">Asset Manager v-1.0</a>
 - And the to-do section of <a href="https://github.com/ngawangtrinley/bdrc-audit/blob/master/README.md">BDRC Audit Prototype README</a></p>
 <p>See <a href="../tests/">Test Requirements</a> for detailed requirements.</p>
-<p>Number of files per folder
-File Type Requirement
-Canonical paths
-Audit biblio-sheet
-Validate upload package</p>
+<ul>
+<li>Number of files per folder</li>
+<li>File Type Requirement</li>
+<li>Canonical paths</li>
+<li>Audit biblio-sheet</li>
+<li>Validate upload package</li>
+</ul>
 <h1 id="detailed-requirements">Detailed Requirements</h1>
 <h2 id="audit-tool_1">Audit Tool</h2>
 <h3 id="host-platform">Host Platform</h3>
 <p>The Audit Tool has to be deployable by BDRC onto any MacOS or Windows 7+ PC within a reasonable length of time. The BDRC people should know how to configure the Audit Tool.</p>
 <h3 id="invocation">Invocation</h3>
 <p><img alt="Audit Tool workflow" src="../images/2018/12/audit-tool-workflow.png" /></p>
+<h3 id="configuration">Configuration</h3>
+<p>The user should be able to set some test parameters (for example, resolution) differently for each test instance.</p>
 <h4 id="launch">Launch</h4>
 <p>The Audit Tool should be callable from the command line of either platform.
 The command line invocation should either start a text-mode or a windowed dialog. The dialog prompts the user for the directory containing the scans.</p>
@@ -310,7 +314,7 @@ The command line invocation should either start a text-mode or a windowed dialog
 <li>The system runs each test in turn, and records the results.</li>
 <li>The system displays the results.</li>
 </ol>
-<p><a href="../tests/">Test Requirements</a>documents each test's parameters and success criteria.</p>
+<p><a href="../tests/">Test Requirements</a> documents each test's parameters and success criteria.</p>
 <h5 id="enter-biblio-data">Enter biblio-data</h5>
 <p>The system prompts the user for the bibliographical data. It saves the data in a format which the package builder will include. The biblio-data might be what the scanning operator or their project manager input into the spreadsheet (see <a href="https://buda-base.github.io/digitization-guidelines/#standards/standards-en/">Bibliographic Data Sheet</a>)</p>
 <p><strong>Implementation note:</strong> The python <code>xlrd</code> package supports extracting data from an Excel sheet. If we truly require input sheets to be <code>.xlsx</code> format, we could consider expanding the biblio-sheet to include the data which auditing requires. That would validate the biblio sheet first. )</p>
@@ -319,6 +323,8 @@ The command line invocation should either start a text-mode or a windowed dialog
 <li>Work Name</li>
 <li>Volumes Names</li>
 <li>Scan Date</li>
+<li>BDRC Contract identifier</li>
+<li>Scanning Requirements specific to the contract</li>
 <li>Info on person who scanned the document (BDRC ref number, or email, or name, or some combination)</li>
 <li><strong>Any other information the Asset Manager requires</strong> This will be an ongoing requirement. The Audit tool validation mechanism may be changed with every release. If needed, it will provide the Excel template for the biblio-data.</li>
 </ul>
@@ -344,8 +350,8 @@ The command line invocation should either start a text-mode or a windowed dialog
   - work information: (see biblio-data above)</p>
 <p>The sign-offs are only required for the Asset Manager to intake the submittal package. A DPE or FR can sign their portions, but the DPM has to add their signature to the package before the Asset Manager will accept it.</p>
 <h5 id="package-uploader">Package Uploader</h5>
-<p>Upload the package. If the package passes the <code>Validate upload package</code> test, this facility transfers it to a resource where further processing can occur.[^Todiscuss]</p>
-<p>[^Todiscuss]: This should be a separate, controlled facility. We don't want DPEs or FRs to upload.</p>
+<p>Upload the package. If the package passes the <code>Validate upload package</code> test, this facility transfers it to a resource where further processing can occur. [^12b45fa9]</p>
+<p>[^12b45fa9]: This should be a separate, controlled facility. We don't want DPEs or FRs to upload.</p>
               
             </div>
           </div>
